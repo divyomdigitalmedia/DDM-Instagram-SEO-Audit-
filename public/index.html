@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DDM Instagram SEO Audit</title>
+<meta name="description" content="Professional Instagram SEO audit by Divyom Digital Media.">
+<style>
+:root{
+  --bg:#06070b;--panel:#0d1017;--panel2:#11151e;--line:#202633;
+  --text:#f7f7fb;--muted:#8f96a8;--purple:#a78bfa;--pink:#f472b6;
+  --green:#65e6a4;--orange:#ffbd68;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:
+  radial-gradient(circle at 15% 0%,rgba(167,139,250,.14),transparent 30%),
+  radial-gradient(circle at 90% 15%,rgba(244,114,182,.10),transparent 28%),
+  var(--bg);color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+button,input{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;background:rgba(6,7,11,.78);
+  backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)
+}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:-.7px;font-size:20px}.logo span{color:var(--purple)}
+.navlinks{display:flex;gap:26px}.navlinks a{color:#aab0c0;text-decoration:none;font-size:14px}
+.hero{padding:92px 0 58px;text-align:center}
+.eyebrow{
+  display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #2a3040;
+  background:#0d1017;border-radius:999px;color:#c9bcff;font-size:12px;font-weight:800
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+h1{font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:25px auto 20px;max-width:850px}
+.gradient{background:linear-gradient(90deg,#fff,#c9bcff,#f7a8d1);-webkit-background-clip:text;color:transparent}
+.hero>p{max-width:680px;margin:auto;color:var(--muted);font-size:17px}
+.audit-shell{
+  max-width:760px;margin:34px auto 0;padding:8px;border:1px solid #292f3c;border-radius:22px;
+  background:linear-gradient(145deg,rgba(167,139,250,.08),rgba(255,255,255,.02));
+  box-shadow:0 30px 90px rgba(0,0,0,.35)
+}
+.audit{background:var(--panel);border-radius:16px;padding:25px;text-align:left}
+.inputrow{display:flex;gap:10px}
+input{
+  width:100%;background:#080a0f;border:1px solid #2a3040;color:white;padding:16px 17px;
+  border-radius:11px;outline:none
+}
+input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(167,139,250,.10)}
+.primary{
+  border:0;border-radius:11px;padding:0 22px;background:#fff;color:#08090d;font-weight:900;cursor:pointer;
+  min-width:130px
+}
+.primary:hover{transform:translateY(-1px)}
+.connect{
+  width:100%;margin-top:15px;padding:15px;border:1px solid #765fd0;border-radius:11px;
+  color:#fff;background:linear-gradient(90deg,#8b6ff0,#b77cf6);font-weight:900;cursor:pointer
+}
+.hint{color:#72798b;font-size:12px;margin-top:11px;text-align:center}
+.or{display:flex;align-items:center;gap:12px;color:#606778;font-size:11px;margin:18px 0}.or:before,.or:after{content:"";height:1px;background:#252b38;flex:1}
+.status{display:none;margin:16px auto 0;max-width:760px;padding:14px 16px;border-radius:13px;background:#0d1512;border:1px solid #214c38;text-align:left}
+.status strong{color:var(--green)}.status p{margin:4px 0 0;color:#9aa4a0;font-size:13px}
+.loading{display:none;padding:20px;text-align:center;color:#aeb4c2}
+.spinner{width:22px;height:22px;border:2px solid #303645;border-top-color:var(--purple);border-radius:50%;display:inline-block;animation:spin .8s linear infinite;vertical-align:middle;margin-right:8px}@keyframes spin{to{transform:rotate(360deg)}}
+.result{display:none;text-align:left;margin-top:28px}
+.profile{
+  padding:20px;border:1px solid #252c39;background:rgba(13,16,23,.9);border-radius:18px;
+  display:flex;align-items:center;gap:16px
+}
+.avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;background:#191e29;border:1px solid #303646}
+.pname{font-weight:900;font-size:20px}.handle{color:#858da0;font-size:13px}.bio{color:#aeb4c2;font-size:13px;margin-top:5px}
+.stats{margin-left:auto;display:flex;gap:25px;text-align:center}.stat b{display:block;font-size:18px}.stat span{font-size:11px;color:#737b8c}
+.scorecard{
+  margin-top:14px;padding:28px;border:1px solid #292f3c;background:linear-gradient(145deg,#111521,#0c0f16);
+  border-radius:18px;text-align:center
+}
+.score{font-size:82px;line-height:1;font-weight:950;letter-spacing:-5px;background:linear-gradient(180deg,#fff,#b9a5ff);-webkit-background-clip:text;color:transparent}
+.scorelabel{color:#858da0;font-size:12px}.statusline{font-weight:800;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:14px}
+.card,.list{background:#0d1017;border:1px solid #252c39;border-radius:16px;padding:20px}
+.card h3,.list h3{margin:0 0 8px;font-size:15px}.desc{color:#858da0;font-size:12px}
+.bar{height:7px;border-radius:99px;background:#242a36;overflow:hidden;margin-top:15px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#8b6ff0,#f09acb);border-radius:99px}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}
+.list ul{list-style:none;padding:0;margin:0}.list li{color:#aeb4c2;font-size:13px;padding:7px 0;border-bottom:1px solid #1d222c}.list li:last-child{border:0}.good li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}.warn li:before{content:"→";color:var(--orange);font-weight:900;margin-right:8px}
+.paywall{margin-top:13px;padding:24px;border:1px solid #3b3150;border-radius:16px;background:linear-gradient(135deg,#15101f,#0d1017);text-align:center}
+.paywall h3{margin:0;font-size:19px}.paywall p{color:#8e95a6;font-size:13px;max-width:600px;margin:8px auto 16px}
+.pay{display:inline-block;text-decoration:none;background:#fff;color:#07080b;padding:12px 18px;border-radius:9px;font-weight:900;font-size:13px}
+.section{padding:90px 0}.sectionhead{text-align:center;max-width:650px;margin:auto}.sectionhead h2{font-size:38px;letter-spacing:-1.5px;margin:0}.sectionhead p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:30px}.feature{padding:22px;border:1px solid #242a35;background:#0c0f15;border-radius:15px}.num{color:var(--purple);font-weight:900;font-size:12px}.feature h3{margin:8px 0}.feature p{color:#858da0;font-size:13px;margin:0}
+footer{border-top:1px solid #1d222b;padding:30px 0;text-align:center;color:#626a7b;font-size:12px}
+@media(max-width:760px){
+ .navlinks{display:none}.hero{padding:65px 0 35px}h1{letter-spacing:-2.5px}
+ .inputrow{flex-direction:column}.primary{height:52px}.profile{align-items:flex-start;flex-wrap:wrap}.stats{width:100%;margin-left:0;justify-content:space-around}
+ .cards,.lists,.features{grid-template-columns:1fr}.score{font-size:68px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="container nav">
+  <div class="logo">DIVYOM<span>™</span></div>
+  <div class="navlinks"><a href="#audit">Audit</a><a href="#features">What We Check</a></div>
+</div></nav>
+
+<header class="hero">
+<div class="container">
+  <div class="eyebrow"><span class="dot"></span> DDM INSTAGRAM SEO INTELLIGENCE</div>
+  <h1>Turn your Instagram profile into a <span class="gradient">search asset.</span></h1>
+  <p>Connect your Professional Instagram account and get a clean preliminary SEO audit with a score, profile signals and actionable optimization opportunities.</p>
+
+  <div class="audit-shell" id="audit">
+    <div class="audit">
+      <div class="inputrow">
+        <input id="username" placeholder="@username or Instagram profile URL" autocomplete="off">
+        <button class="primary" onclick="analyze()">Analyze</button>
+      </div>
+      <div class="hint">For an official API audit, the username must belong to the Instagram account you connect.</div>
+      <div class="or"><span>OR</span></div>
+      <button class="connect" onclick="connectInstagram()">Connect Instagram for Free Audit →</button>
+      <div class="hint">Your access token stays on the server and is never placed in the browser.</div>
+    </div>
+  </div>
+
+  <div class="status" id="statusBox">
+    <strong id="statusTitle"></strong>
+    <p id="statusText"></p>
+  </div>
+
+  <div class="loading" id="loading"><span class="spinner"></span>Building your Instagram SEO report…</div>
+
+  <section class="result" id="result">
+    <div class="profile">
+      <img id="avatar" class="avatar" alt="Instagram profile">
+      <div>
+        <div class="pname" id="pname">Instagram Profile</div>
+        <div class="handle" id="handle">@username</div>
+        <div class="bio" id="bio"></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="followers">0</b><span>FOLLOWERS</span></div>
+        <div class="stat"><b id="following">0</b><span>FOLLOWING</span></div>
+        <div class="stat"><b id="posts">0</b><span>POSTS</span></div>
+      </div>
+    </div>
+
+    <div class="scorecard">
+      <div class="score" id="score">0</div>
+      <div class="scorelabel">PRELIMINARY INSTAGRAM SEO SCORE / 100</div>
+      <div class="statusline" id="scoreStatus"></div>
+    </div>
+
+    <div class="cards">
+      <div class="card"><h3>Profile SEO</h3><div class="desc" id="profileDesc"></div><div class="bar"><i id="profileBar"></i></div></div>
+      <div class="card"><h3>Keyword SEO</h3><div class="desc" id="keywordDesc"></div><div class="bar"><i id="keywordBar"></i></div></div>
+      <div class="card"><h3>Content SEO</h3><div class="desc" id="contentDesc"></div><div class="bar"><i id="contentBar"></i></div></div>
+      <div class="card"><h3>Discoverability</h3><div class="desc" id="discoverDesc"></div><div class="bar"><i id="discoverBar"></i></div></div>
+    </div>
+
+    <div class="lists">
+      <div class="list good"><h3>✓ Potential Strengths</h3><ul id="strengths"></ul></div>
+      <div class="list warn"><h3>→ Optimization Opportunities</h3><ul id="opportunities"></ul></div>
+    </div>
+
+    <div class="paywall">
+      <h3>Want the Complete Instagram SEO Report?</h3>
+      <p>Unlock detailed keyword research, competitor analysis, bio recommendations, content strategy, local SEO recommendations and a professional action plan.</p>
+      <a class="pay" href="mailto:hello@divyom.com?subject=Instagram%20SEO%20Full%20Audit">Get Full Audit — ₹999</a>
+    </div>
+  </section>
+</div>
+</header>
+
+<section class="section" id="features"><div class="container">
+  <div class="sectionhead"><h2>What the DDM audit checks</h2><p>A focused preliminary report built around profile discoverability signals available through the official Instagram API.</p></div>
+  <div class="features">
+    <div class="feature"><div class="num">01</div><h3>Profile SEO</h3><p>Name field, username structure, bio completeness and positioning signals.</p></div>
+    <div class="feature"><div class="num">02</div><h3>Keyword SEO</h3><p>Descriptive language and niche keyword signals found in the profile bio.</p></div>
+    <div class="feature"><div class="num">03</div><h3>Content SEO</h3><p>Public media-library signals and consistency opportunities.</p></div>
+    <div class="feature"><div class="num">04</div><h3>Discoverability</h3><p>Signals that can support search and discovery, including local opportunities.</p></div>
+    <div class="feature"><div class="num">05</div><h3>Action Plan</h3><p>The free report highlights the most important visible improvements.</p></div>
+    <div class="feature"><div class="num">06</div><h3>Full Audit</h3><p>Paid reporting can add deeper strategy, competitors and keyword research.</p></div>
+  </div>
+</div></section>
+
+<footer>© 2026 Divyom Digital Media · DDM Instagram SEO Audit · Independent assessment, not an official Meta score.</footer>
+
+<script>
+const API_BASE = "";
+
+function connectInstagram(){
+  window.location.href = API_BASE + "/auth/instagram";
+}
+
+function setStatus(title, text, error=false){
+  const box=document.getElementById("statusBox");
+  box.style.display="block";
+  box.style.borderColor=error ? "#60313a" : "#214c38";
+  document.getElementById("statusTitle").textContent=title;
+  document.getElementById("statusTitle").style.color=error ? "#ff879b" : "#65e6a4";
+  document.getElementById("statusText").textContent=text;
+}
+
+function cleanUsername(value){
+  let v=String(value||"").trim().replace(/^@/,"");
+  const m=v.match(/(?:https?:\/\/)?(?:www\.)?instagram\.com\/([^/?#]+)/i);
+  if(m)v=m[1];
+  return v.split("?")[0].split("#")[0].replace(/\/+$/,"").replace(/^@/,"").toLowerCase();
+}
+
+function fillList(id, items, empty){
+  const el=document.getElementById(id); el.innerHTML="";
+  (items && items.length ? items : [empty]).forEach(x=>{
+    const li=document.createElement("li"); li.textContent=x; el.appendChild(li);
+  });
+}
+
+function fillAudit(data){
+  const p=data.profile, c=data.categories||{};
+  document.getElementById("result").style.display="block";
+  document.getElementById("avatar").src=p.profile_picture_url||"";
+  document.getElementById("avatar").style.display=p.profile_picture_url?"block":"none";
+  document.getElementById("pname").textContent=p.name||"Instagram Profile";
+  document.getElementById("handle").textContent="@"+(p.username||"");
+  document.getElementById("bio").textContent=p.biography||"No public biography was available.";
+  document.getElementById("followers").textContent=Number(p.followers_count||0).toLocaleString();
+  document.getElementById("following").textContent=Number(p.follows_count||0).toLocaleString();
+  document.getElementById("posts").textContent=Number(p.media_count||0).toLocaleString();
+
+  document.getElementById("score").textContent=data.score;
+  document.getElementById("scoreStatus").textContent=data.status||"Preliminary result";
+
+  const map=[
+    ["profileBar","profileDesc","profileSEO","Profile"],
+    ["keywordBar","keywordDesc","keywordSEO","Keyword"],
+    ["contentBar","contentDesc","contentSEO","Content"],
+    ["discoverBar","discoverDesc","discoverabilitySEO","Discoverability"]
+  ];
+  map.forEach(([bar,desc,key,label])=>{
+    const val=Number(c[key]||0);
+    document.getElementById(bar).style.width=val+"%";
+    document.getElementById(desc).textContent=label+" SEO score: "+val+"/100";
+  });
+
+  fillList("strengths",data.strengths,"No major strengths were detected from the available data.");
+  fillList("opportunities",data.opportunities,"No major optimization opportunities were detected.");
+}
+
+async function loadAudit(id){
+  const loading=document.getElementById("loading");
+  loading.style.display="block";
+  try{
+    const r=await fetch("/api/free-audit/"+encodeURIComponent(id));
+    const data=await r.json();
+    if(!r.ok || !data.success) throw new Error(data.message||"Audit could not be loaded.");
+    fillAudit(data);
+    setStatus("Instagram Connected ✓","Your preliminary audit has been generated.");
+    document.getElementById("result").scrollIntoView({behavior:"smooth",block:"start"});
+  }catch(e){
+    setStatus("Audit could not be loaded",e.message,true);
+  }finally{
+    loading.style.display="none";
+  }
+}
+
+async function analyze(){
+  const username=cleanUsername(document.getElementById("username").value);
+  if(!username) return setStatus("Enter a username","Enter the Instagram username you want to audit.",true);
+
+  try{
+    const r=await fetch("/api/audit",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({username})
+    });
+    const data=await r.json();
+    if(!r.ok || !data.success) throw new Error(data.message||"Profile could not be analyzed.");
+    if(data.auditId) await loadAudit(data.auditId);
+  }catch(e){
+    setStatus("Connect Instagram first",e.message,true);
+  }
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+  const q=new URLSearchParams(location.search);
+  const error=q.get("instagram_error");
+  const id=q.get("audit_id");
+  if(error) setStatus("Instagram connection failed",error,true);
+  if(q.get("instagram_connected")==="true" && id) loadAudit(id);
+  if(id || error) history.replaceState({},document.title,location.pathname);
+});
+</script>
+</body>
+</html>
