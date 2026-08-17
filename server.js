@@ -279,10 +279,10 @@ app.get("/auth/instagram", (req, res) => {
 });
 
 app.get("/auth/instagram/callback", async (req, res) => {
+  
   console.log("=== INSTAGRAM CALLBACK HIT ===");
   console.log("Callback query:", req.query);
-  console.log("code:", req.query.code ? "RECEIVED" : "MISSING");
-  console.log("state:", req.query.state ? "RECEIVED" : "MISSING");
+  console.log("Authorization code:", req.query.code ? "RECEIVED" : "MISSING");
   
   try {
     const { code, state, error, error_reason } = req.query;
