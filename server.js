@@ -270,6 +270,9 @@ app.get("/auth/instagram", (req, res) => {
     state
   });
 
+  console.log("INSTAGRAM CLIENT ID:", CLIENT_ID);
+  console.log("INSTAGRAM REDIRECT URI:", REDIRECT_URI);
+
   res.redirect(
     "https://www.instagram.com/oauth/authorize?" + params.toString()
   );
